@@ -1,0 +1,27 @@
+{% include 'main.html' %}
+{% load static %}
+{% block title %}{% endblock %}
+{% block content %}
+    <main class="container">
+        <section>
+            <h5 class="text-center">Room Name : <span id="room-name"></span></h5>
+        </section>
+        <section>
+            <div id="video-streams" class="row row-cols-1 row-cols-md-2 g-4">
+            </div>
+            <div class="mb-3 btn-group position-absolute bottom-0 start-50 translate-middle-x" role="group" aria-label="Basic mixed styles example">
+                <button id="camera-btn" type="button" class="btn btn-danger">
+                    <img src="{% static 'base/images/camera-video-fill.svg' %}">
+                </button>
+                <button id="mic-btn" type="button" class="btn btn-warning">
+                    <img src="{% static 'base/images/mic-fill.svg' %}">
+                </button>
+                <button id="leave-btn" type="button" class="btn btn-success">
+                    <img src="{% static 'base/images/x-circle-fill.svg' %}">
+                </button>
+            </div>
+        </section>
+    </main>
+    <script src="{% static 'base/assets/AgoraRTC_N-4.12.0.js' %}"></script>
+    <script src="{% static 'base/js/stream.js' %}"></script>
+{% endblock %}
